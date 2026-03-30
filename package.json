@@ -1,17 +1,23 @@
 {
   "name": "my-inventory-api",
-  "module": "index.ts",
+  "module": "src/index.ts",
   "type": "module",
   "private": true,
+  "scripts": {
+    "dev": "bun --watch src/index.ts",
+    "db:migrate": "bunx prisma migrate dev --name init",
+    "db:studio": "bunx prisma studio",
+    "generate": "bunx prisma generate"
+  },
   "devDependencies": {
     "@types/bun": "latest",
-    "prisma": "6"
+    "prisma": "^6.0.0"
   },
   "peerDependencies": {
     "typescript": "^5"
   },
   "dependencies": {
-    "@prisma/client": "6",
+    "@prisma/client": "^6.0.0",
     "elysia": "^1.4.28"
   }
 }
